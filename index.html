@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock_Paper_Scissors</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div class="intro-screen">
+        <div class="intro-screen-elements">
+            <h1 class="game-title">ROCK-PAPER-SCISSORS</h1>
+            <button class="start-game" onclick="swapScreens()">Start game</button>
+        </div>
+    </div>
+
+    <!-- LOADER -->
+
+    <div class="wrapper">
+        <span class="circle circle-1"></span>
+        <span class="circle circle-2"></span>
+        <span class="circle circle-3"></span>
+        <span class="circle circle-4"></span>
+        <span class="circle circle-5"></span>
+        <span class="circle circle-6"></span>
+        <span class="circle circle-7"></span>
+        <span class="circle circle-8"></span>
+      </div>
+
+    <!-- LOADER -->
+
+    <div class="game-screen">
+        <div class="game-screen-elements">
+            <h2 class="choice">Make your choice</h2>
+            <div class="choice">
+                <button>rock</button>
+                <button>paper</button>
+                <button>scissors</button>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<script src="game.js"></script>
+
+</html>

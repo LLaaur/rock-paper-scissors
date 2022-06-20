@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
@@ -41,12 +43,20 @@
     <!-- LOADER -->
 
     <div class="game-screen">
+        <div class="game-scores">
+            <h3 class="player">PLAYER SCORE: 0</h2>
+            <h3 class="computer">COMPUTER SCORE: 0</h2>
+        </div>
         <div class="game-screen-elements">
             <h2 class="choice">Make your choice</h2>
-            <div class="choice">
-                <button>rock</button>
-                <button>paper</button>
-                <button>scissors</button>
+            <div class="fist-container">
+                <div class="fist-left"></div>
+                <div class="fist-right"></div>
+            </div>
+            <div class="pick">
+                <button class="rock" onclick="click()">rock</button>
+                <button class="paper">paper</button>
+                <button class="scissor">scissors</button>
             </div>
         </div>
     </div>

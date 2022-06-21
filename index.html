@@ -44,8 +44,8 @@
 
     <div class="game-screen">
         <div class="game-scores">
-            <h3 class="player">PLAYER SCORE: 0</h2>
-            <h3 class="computer">COMPUTER SCORE: 0</h2>
+            <h3 class="player">PLAYER SCORE: 0</h3>
+            <h3 class="computer">COMPUTER SCORE: 0</h3>
         </div>
         <div class="game-screen-elements">
             <h2 class="choice">Make your choice</h2>
@@ -54,9 +54,9 @@
                 <img class="fist-right" src="/assets/rock.png" alt="">
             </div>
             <div class="pick">
-                <button class="rock" onclick="triggerAnimation()">rock</button>
-                <button class="paper">paper</button>
-                <button class="scissor">scissors</button>
+                <button class="rock" onclick="triggerAnimation('rock')">rock</button>
+                <button class="paper" onClick="triggerAnimation('paper')">paper</button>
+                <button class="scissors" onclick="triggerAnimation('scissors')">scissors</button>
             </div>
         </div>
     </div>

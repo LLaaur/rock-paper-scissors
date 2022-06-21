@@ -18,7 +18,18 @@ swapScreens = function () {
     }
 };
 
-triggerAnimation = function(){
-    playerHand.style.animation = 'fistLeft 2s';
-    computerHand.style.animation = 'fistRight 2s';
+
+triggerAnimation = function(value){ setTimeout(function(){
+    playerHand.style.animation = '';
+    computerHand.style.animation = '';
+    if (value === 'rock'){
+        playerHand.src = "assets\\rock.png";
+    } else if (value === 'paper'){
+        playerHand.src = "assets\\paper.png";
+    } else if (value === 'scissors'){
+        playerHand.src = "assets\\scissors.png";
+    }
+}, 1500);
+playerHand.style.animation = 'fistLeft 1.5s';
+computerHand.style.animation = 'fistRight 1.5s';
 };

@@ -1,3 +1,5 @@
+const playerScore = 0;
+const computerScore = 0;
 const introScreen = document.querySelector('.intro-screen');
 const startBtn = document.querySelector('.start-game');
 const loadScreen = document.querySelector('.wrapper');
@@ -19,15 +21,22 @@ swapScreens = function () {
 };
 
 
+
 triggerAnimation = function(value){ setTimeout(function(){
     playerHand.style.animation = '';
     computerHand.style.animation = '';
+    const choices = ['rock', 'paper', 'scissors'];
+    const computerRandom = Math.floor(Math.random() * 3);
+    const computerChoice = choices[computerRandom];
     if (value === 'rock'){
         playerHand.src = "assets\\rock.png";
+        computerHand.src = `/assets/${computerChoice}.png`;
     } else if (value === 'paper'){
         playerHand.src = "assets\\paper.png";
+        computerHand.src = `/assets/${computerChoice}.png`;
     } else if (value === 'scissors'){
         playerHand.src = "assets\\scissors.png";
+        computerHand.src = `/assets/${computerChoice}.png`;
     }
 }, 1500);
 playerHand.style.animation = 'fistLeft 1.5s';

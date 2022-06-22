@@ -6,6 +6,8 @@ const loadScreen = document.querySelector('.wrapper');
 const gameScreen = document.querySelector('.game-screen');
 const playerHand = document.querySelector('.fist-left');
 const computerHand = document.querySelector('.fist-right');
+const winner = document.querySelector('.choice');
+const gameOverScreen = document.querySelector('.buttons-container');
 
 function showGame() {
     loadScreen.style.display = 'none';
@@ -26,6 +28,17 @@ displayScore = function () {
     const computerScreenScore = document.querySelector('.computer span');
     playerScreenScore.textContent = playerScore;
     computerScreenScore.textContent = computerScore;
+};
+
+gameOver = function(){
+    if (playerScore === 5 && computerScore < playerScore){
+        winner.textContent = 'The player wins this match';
+        $(gameOverScreen).css('display', 'flex');
+    }
+    else if (computerScore === 5 && playerScore < computerScore){
+        winner.textContent = 'The computer wins this match';
+        $(gameOverScreen).css('display', 'flex');
+    }
 }
 
 
@@ -36,7 +49,6 @@ triggerAnimation = function (value) {
         const choices = ['rock', 'paper', 'scissors'];
         const computerRandom = Math.floor(Math.random() * 3);
         const computerChoice = choices[computerRandom];
-        const winner = document.querySelector('.choice')
         if (value === 'rock') {
             playerHand.src = "assets\\rock.png";
             computerHand.src = `/assets/${computerChoice}.png`;
@@ -56,36 +68,42 @@ triggerAnimation = function (value) {
             winner.textContent = 'The computer wins';
             computerScore++;
             displayScore();
+            gameOver();
             return
         }
         else if (value === 'rock' && computerChoice === 'scissors') {
             winner.textContent = 'The player wins';
             playerScore++;
             displayScore();
+            gameOver();
             return
         }
         else if (value === 'paper' && computerChoice === 'rock') {
             winner.textContent = 'The player wins';
             playerScore++;
             displayScore();
+            gameOver();
             return
         }
         else if (value === 'paper' && computerChoice === 'scissors') {
             winner.textContent = 'The computer wins';
             computerScore++;
             displayScore();
+            gameOver();
             return
         }
         else if (value === 'scissors' && computerChoice === 'paper') {
             winner.textContent = 'The player wins';
             playerScore++;
             displayScore();
+            gameOver();
             return
         }
         else if (value === 'scissors' && computerChoice === 'rock') {
             winner.textContent = 'The computer wins';
             computerScore++;
             displayScore();
+            gameOver();
             return
         }
     }, 1500);

@@ -124,10 +124,10 @@ body {
 
 .game-screen {
     background-color: tomato;
-    height: 100vh;
+    height: 93.4vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    padding-top: 4rem;
     align-items: center;
     display: none;
 }
@@ -135,6 +135,7 @@ body {
 .game-screen h2{
     font-size: 4.5rem;
     font-family: 'Righteous', sans-serif;
+    text-align: center;
 }
 
 
@@ -198,6 +199,41 @@ body {
   color: tomato;
 }
 
+/* .game-over{
+  background-color: tomato;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+} */
+
+.buttons-container{
+  background-color: tomato;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 5rem;
+  margin-right: 2.5rem;
+  display: none;
+}
+
+.home,
+.restart,
+.exit{
+  font-family: 'Righteous', sans-serif;
+  padding: 1rem 4rem;
+  font-size: 1.8rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #223b46;
+  color: tomato;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
 @keyframes fistLeft {
   0% {
     transform: rotateY(180deg) translateY(0px);
@@ -251,3 +287,4 @@ body {
     transform: translateY(0px);
   }
 };
+

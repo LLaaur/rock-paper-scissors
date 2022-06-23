@@ -4,10 +4,16 @@ const introScreen = document.querySelector('.intro-screen');
 const startBtn = document.querySelector('.start-game');
 const loadScreen = document.querySelector('.wrapper');
 const gameScreen = document.querySelector('.game-screen');
+const playerScreenScore = document.querySelector('.player span');
+const computerScreenScore = document.querySelector('.computer span');
+const gameBtns = document.querySelector('.pick');
 const playerHand = document.querySelector('.fist-left');
 const computerHand = document.querySelector('.fist-right');
 const winner = document.querySelector('.choice');
 const gameOverScreen = document.querySelector('.buttons-container');
+const exitBtn = document.querySelector('.exit');
+const homeBtn = document.querySelector('.home');
+const restartBtn = document.querySelector('.restart');
 
 function showGame() {
     loadScreen.style.display = 'none';
@@ -19,27 +25,14 @@ swapScreens = function () {
         introScreen.style.display = 'none';
         loadScreen.style.display = 'flex';
         setTimeout(showGame, 2000);
-    }
+    };
 };
 
 
 displayScore = function () {
-    const playerScreenScore = document.querySelector('.player span');
-    const computerScreenScore = document.querySelector('.computer span');
     playerScreenScore.textContent = playerScore;
     computerScreenScore.textContent = computerScore;
 };
-
-gameOver = function(){
-    if (playerScore === 5 && computerScore < playerScore){
-        winner.textContent = 'The player wins this match';
-        $(gameOverScreen).css('display', 'flex');
-    }
-    else if (computerScore === 5 && playerScore < computerScore){
-        winner.textContent = 'The computer wins this match';
-        $(gameOverScreen).css('display', 'flex');
-    }
-}
 
 
 triggerAnimation = function (value) {
@@ -109,4 +102,36 @@ triggerAnimation = function (value) {
     }, 1500);
     playerHand.style.animation = 'fistLeft 1.5s';
     computerHand.style.animation = 'fistRight 1.5s';
+};
+
+gameOver = function(){
+    if (playerScore === 5 && computerScore < playerScore){
+        winner.textContent = 'The player wins this match';
+        $(gameBtns).css('display', 'none');
+        $(gameOverScreen).css('display', 'flex');
+    }
+    else if (computerScore === 5 && playerScore < computerScore){
+        winner.textContent = 'The computer wins this match';
+        $(gameBtns).css('display', 'none');
+        $(gameOverScreen).css('display', 'flex');
+    };
+};
+
+gameOverBtns = function(value){
+    if(value === 'home'){
+        location.reload();
+    }
+    else if(value === 'restart'){
+        $(gameOverScreen).css('display', 'none');
+        $(gameBtns).css('display', 'flex');
+        winner.textContent = '';
+        computerScore = 0;
+        playerScore = 0;
+        playerScreenScore.textContent = playerScore;
+        computerScreenScore.textContent = computerScore;
+        return;
+    }
+    else if(value === 'exit'){
+        window.close();
+    };
 };

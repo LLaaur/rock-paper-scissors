@@ -20,6 +20,8 @@ function showGame() {
     gameScreen.style.display = 'flex';
 };
 
+// SWITCH BETWEEN THE HOME SCREEN AND THE GAME SCREEN
+
 swapScreens = function () {
     if (startBtn) {
         introScreen.style.display = 'none';
@@ -28,6 +30,7 @@ swapScreens = function () {
     };
 };
 
+// UPDATE SCORES ON THE SCREEN
 
 displayScore = function () {
     playerScreenScore.textContent = playerScore;
@@ -35,13 +38,20 @@ displayScore = function () {
 };
 
 
+
 triggerAnimation = function (value) {
     setTimeout(function () {
         playerHand.style.animation = '';
         computerHand.style.animation = '';
+
+        // MAKE THE COMPUTER GENERATE A RANDOM CHOICE
+
         const choices = ['rock', 'paper', 'scissors'];
         const computerRandom = Math.floor(Math.random() * 3);
         const computerChoice = choices[computerRandom];
+
+        // UPDATING IMAGES ON BUTTON CLICK 
+
         if (value === 'rock') {
             playerHand.src = "assets\\rock.png";
             computerHand.src = `/assets/${computerChoice}.png`;
@@ -53,6 +63,7 @@ triggerAnimation = function (value) {
             computerHand.src = `/assets/${computerChoice}.png`;
         }
 
+        // COMPARING ALL PLAYER AND COMPUTER CHOICES OUTCOMES
 
         if (value === computerChoice) {
             return winner.textContent = 'Tie!'
@@ -61,50 +72,57 @@ triggerAnimation = function (value) {
             winner.textContent = 'The computer wins';
             computerScore++;
             displayScore();
-            gameOver();
+            matchOver();
             return
         }
         else if (value === 'rock' && computerChoice === 'scissors') {
             winner.textContent = 'The player wins';
             playerScore++;
             displayScore();
-            gameOver();
+            matchOver();
             return
         }
         else if (value === 'paper' && computerChoice === 'rock') {
             winner.textContent = 'The player wins';
             playerScore++;
             displayScore();
-            gameOver();
+            matchOver();
             return
         }
         else if (value === 'paper' && computerChoice === 'scissors') {
             winner.textContent = 'The computer wins';
             computerScore++;
             displayScore();
-            gameOver();
+            matchOver();
             return
         }
         else if (value === 'scissors' && computerChoice === 'paper') {
             winner.textContent = 'The player wins';
             playerScore++;
             displayScore();
-            gameOver();
+            matchOver();
             return
         }
         else if (value === 'scissors' && computerChoice === 'rock') {
             winner.textContent = 'The computer wins';
             computerScore++;
             displayScore();
-            gameOver();
+            matchOver();
             return
         }
     }, 1500);
     playerHand.style.animation = 'fistLeft 1.5s';
     computerHand.style.animation = 'fistRight 1.5s';
+
+    // REVERTING THE IMAGE BACK TO ROCK AFTER DISPLAYING THE OUTCOME 
+
+    playerHand.src = 'assets\\rock.png';
+    computerHand.src = 'assets\\rock.png';
 };
 
-gameOver = function(){
+// DECLARING A WINNER AFTER EACH OF THE PLAYERS SCORES 5
+
+matchOver = function(){
     if (playerScore === 5 && computerScore < playerScore){
         winner.textContent = 'The player wins this match';
         $(gameBtns).css('display', 'none');
@@ -117,19 +135,23 @@ gameOver = function(){
     };
 };
 
+restartGame = function(){
+    $(gameOverScreen).css('display', 'none');
+    $(gameBtns).css('display', 'flex');
+    winner.textContent = '';
+    computerScore = 0;
+    playerScore = 0;
+    playerScreenScore.textContent = playerScore;
+    computerScreenScore.textContent = computerScore;
+    return;
+};
+
 gameOverBtns = function(value){
     if(value === 'home'){
         location.reload();
     }
     else if(value === 'restart'){
-        $(gameOverScreen).css('display', 'none');
-        $(gameBtns).css('display', 'flex');
-        winner.textContent = '';
-        computerScore = 0;
-        playerScore = 0;
-        playerScreenScore.textContent = playerScore;
-        computerScreenScore.textContent = computerScore;
-        return;
+        restartGame();
     }
     else if(value === 'exit'){
         window.close();

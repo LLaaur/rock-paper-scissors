@@ -53,14 +53,14 @@ triggerAnimation = function (value) {
         // UPDATING IMAGES ON BUTTON CLICK 
 
         if (value === 'rock') {
-            playerHand.src = "assets\\rock.png";
-            computerHand.src = `/assets/${computerChoice}.png`;
+            playerHand.src = "./assets\\rock.png";
+            computerHand.src = `./assets/${computerChoice}.png`;
         } else if (value === 'paper') {
-            playerHand.src = "assets\\paper.png";
-            computerHand.src = `/assets/${computerChoice}.png`;
+            playerHand.src = "./assets\\paper.png";
+            computerHand.src = `./assets/${computerChoice}.png`;
         } else if (value === 'scissors') {
-            playerHand.src = "assets\\scissors.png";
-            computerHand.src = `/assets/${computerChoice}.png`;
+            playerHand.src = "./assets\\scissors.png";
+            computerHand.src = `./assets/${computerChoice}.png`;
         }
 
         // COMPARING ALL PLAYER AND COMPUTER CHOICES OUTCOMES

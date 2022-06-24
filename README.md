@@ -5,8 +5,12 @@ hands because of the function callback but I figured out what I had to do after 
 
 Main points I had to focus on:
 
-I   how to randomly select items out of an array
-II  how to make elements inherit css properties
-III a bit of jQuery syntax
-IV  DOM manipulation
-V  proper use of the setTimeout() function in JS
+I.   how to randomly select items out of an array
+
+II.  how to make elements inherit css properties
+
+III. a bit of jQuery syntax
+
+IV.  DOM manipulation
+
+V.  proper use of the setTimeout() function in JS

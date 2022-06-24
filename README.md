@@ -9,8 +9,10 @@ I.   how to randomly select items out of an array
 
 II.  how to make elements inherit css properties
 
-III. a bit of jQuery syntax
+III. how to make a loading screen
 
-IV.  DOM manipulation
+IV.  a bit of jQuery syntax
 
-V.  proper use of the setTimeout() function in JS
+V.   DOM manipulation
+
+VI.  proper use of the setTimeout() function in JS

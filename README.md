@@ -16,3 +16,6 @@ IV.  a bit of jQuery syntax
 V.   DOM manipulation
 
 VI.  proper use of the setTimeout() function in JS
+
+
+👉 <a href="https://llaaur.github.io/rock-paper-scissors/"> Live demo </a>

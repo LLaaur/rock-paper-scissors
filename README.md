@@ -17,5 +17,7 @@ V.   DOM manipulation
 
 VI.  proper use of the setTimeout() function in JS
 
+![rock paper scissors](https://user-images.githubusercontent.com/102544514/193110588-16eb2d69-a3dc-46ad-ab97-ab64a0ce8db3.png)
+
 
 👉 <a href="https://llaaur.github.io/rock-paper-scissors/"> Live demo </a>
